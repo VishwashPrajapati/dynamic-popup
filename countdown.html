@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    let setdate;
+    setdate = new Date("2021").getFullYear();
+    let x =  setInterval(() => {
+    let now = new Date().getFullYear();
+    let distance = now - setdate;
+
+    let nowdays = Math.floor(distance / 1000 * 60 * 60 * 24)
+    let nowhours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    
+    console.warn(nowhours);
+
+
+
+
+    }, '1000');
+
+console.warn(setdate);
+
+</script>
+
+</body>
+</html>

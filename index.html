@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+
+    <title>Hello, world!</title>
+
+    <script>
+        let a;
+        let date;
+        let time;
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString();
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + ' on ' + date;
+        }, 1000)
+    </script>
+
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron my-4 m-0">
+            <h1 class="display-4 text-center">Current time is : <span id="time"></span> </h1>
+        </div>
+        <div class="my-4 text-center">
+            <h1 class="display-4">DYNAMIC IMAGE POPUP</h1>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="01.jpg" id="imgpop" data-image-title="Angular" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="02.jpg" id="imgpop" data-image-title="Binary Code" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="03.jpg" id="imgpop" data-image-title="Space" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="001.jpg" id="imgpop" data-image-title="Wallpaper" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="002.jpg" id="imgpop" data-image-title="Marshmellow" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4">
+                <div class="pop">
+                <img src="003.jpg" id="imgpop" data-image-title="Apple" class="w-100 img-responsive my-2" alt="">
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+    <footer class="bg-dark m-0 p-3">
+        <h3 class="text-center">SAMPLE PROJECT</h3>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+$(document).ready(function(){
+
+        $('.pop').on('click', function () {
+            $('#popvalue').empty();
+            $('#popnamevalue').empty();
+            let valuedata = $(this).find('#imgpop').attr('src');
+            let valuecapdata = $(this).find('#imgpop').attr('data-image-title');
+            $('#myModal').modal();
+            $('#popvalue').attr('src', valuedata);
+            $('#popnamevalue').append(valuecapdata)
+
+        });
+    });
+
+    </script>
+    <div class="modal fade " tabindex="-1" id="myModal">
+        <div class="modal-dialog fade-in-out modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="popnamevalue"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" width="100%" alt="" id="popvalue">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
